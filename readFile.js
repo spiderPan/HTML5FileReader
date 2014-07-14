@@ -1,7 +1,8 @@
 jQuery(document).ready(function ($) {
 	var _submit = $('#submit'),
 		_resultEle = $('#result'),
-		_fileEle = document.getElementById('exampleInputFile');
+		_fileEle = document.getElementById('exampleInputFile'),
+		_preview = $('.preview');
 
 	_submit.on('click', function (evt) {
 		if (checkReadApi()) {
@@ -40,13 +41,38 @@ jQuery(document).ready(function ($) {
 		// If we use onloadend, we need to check the readyState.
 		reader.onloadend = function (evt) {
 			if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-				_resultEle.val(evt.target.result);
-
+				var _formatted = formatBlob(evt.target.result);
+				_resultEle.val(_formatted);
+				_preview.html(_formatted);
 			}
 		};
 
 		var blob = file.slice(start, stop + 1);
 		reader.readAsBinaryString(blob);
+	}
+
+	function formatBlob(string) {
+		var _title;
+		var stringArr = string.split("\n");
+
+		for (var i = 0; i < stringArr.length; i++) {
+			var stringRow = stringArr[i].split(',');
+			if (0 == i) {
+				_title = stringRow[0];
+				var newString = '<h1>' + _title + '</h1>';
+			}
+
+			for (var j = 0; j < stringRow.length; j++) {
+
+			}
+
+		}
+
+		console.log(stringArr);
+
+		newString += '<table class="table table-hover"><thead><tr></tr></thead><tbody></tbody></table>';
+
+		return newString;
 	}
 
 });

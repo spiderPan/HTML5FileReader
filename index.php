@@ -29,16 +29,8 @@ if ( isset( $_FILES ) && ! empty( $_FILES ) ) {
 	<button id="submit" class="btn btn-default">Submit</button>
 	<textarea class="form-control" id="result" rows="30"></textarea>
 </form>
-<table class="table table-hover">
-	<thead>
-		<tr>
-
-		</tr>
-	</thead>
-	<tbody>
-
-	</tbody>
-</table>
+<div class="preview">
+</div>
 
 </body>
 </html>
