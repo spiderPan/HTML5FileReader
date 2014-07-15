@@ -52,27 +52,43 @@ jQuery(document).ready(function ($) {
 	}
 
 	function formatBlob(string) {
-		var _title;
+		var _title= _header= _label=_content= newFormat='';
 		var stringArr = string.split("\n");
 
 		for (var i = 0; i < stringArr.length; i++) {
 			var stringRow = stringArr[i].split(',');
-			if (0 == i) {
-				_title = stringRow[0];
-				var newString = '<h1>' + _title + '</h1>';
+			if(1 == i){
+				stringRow = stringArr[i].match(/"(.*?)"/g);
 			}
-
+			if(i>2){
+				_content+='<tr>';
+			}
 			for (var j = 0; j < stringRow.length; j++) {
-
+				var stringCel = stringRow[j].trim();
+				if (0 == i && 0==j) {
+					_title = '<h1 class="text-center">' + stringCel + '</h1>';
+				}else if(1 == i && (stringCel.length>0)){
+					_header +='<th class="text-center" colspan="5">'+stringCel.replace(/"/g,'')+'</th>';
+				}else if(2 == i && stringCel.length>0){
+					if((3==j || 7==j)){
+						_label +='<th class="text-center" colspan="2">'+stringCel+'</th>';
+					}else{
+						_label +='<th class="text-center">'+stringCel+'</th>';
+					}
+				}else if(i>2){
+					_content+='<td class="text-center">'+stringCel+'</td>';
+				}
+				
+			}
+			if(i>2){
+				_content+='</tr>';
 			}
 
 		}
 
-		console.log(stringArr);
+		newFormat += _title+'<table class="table table-hover"><thead><tr>'+_header+'</tr><tr>'+_label+'</tr></thead><tbody>'+_content+'</tbody></table>';
 
-		newString += '<table class="table table-hover"><thead><tr></tr></thead><tbody></tbody></table>';
-
-		return newString;
+		return newFormat;
 	}
 
 });

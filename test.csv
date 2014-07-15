@@ -1,0 +1,13 @@
+120 V Single Phase Centurion R Core and Coil - Line Reactors,,,,,,,,,
+"3 % impedance, 60Hz",,,,,"5 % impedance, 60 Hz",,,,
+PN,Motor HP,RMS Amp,File Type,,PN,Motor HP,RMS Amp,File Type,
+CRX03D5BC,0.25,2.08,pdf,dxf,CRX03D5CC,0.25,2.08,pdf,dxf
+CRX07D5AC,0.5,4.16,pdf,dxf,CRX06D6CC,0.5,4.16,pdf,dxf
+CRX10D7BC,0.75,6.25,pdf,dxf,CRX0017AC,0.75,6.25,pdf,dxf
+CRX0024CC,1,8.33,pdf,dxf,CRX0022AC,1,8.33,pdf,dxf
+CRX0024CC,1.5,12.5,pdf,dxf,CRX16D7DC,1.5,12.5,pdf,dxf
+CRX0024AC,2,16.7,pdf,dxf,CRX16D7BC,2,16.7,pdf,dxf
+CRX0031AC,3,25,pdf,dxf,CRX0024AC,3,25,pdf,dxf
+CRX0059AC,5,41.6,pdf,dxf,CRX0059CC,5,41.6,pdf,dxf
+CRX0075AC,7.5,62.5,pdf,dxf,CRX0059AC,7.5,62.5,pdf,dxf
+CRX0114AC,10,83.3,pdf,dxf,CRX0088AC,10,83.3,pdf,dxf
